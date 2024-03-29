@@ -1,0 +1,269 @@
+/*Header en navigatie*/
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  color: white;
+  background-color: black;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.header p {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 1em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+}
+
+.navigatie {
+  background-color: black;
+}
+
+.navigatie li {
+  padding-top: 0.4em;
+}
+
+.navigatie ul {
+  margin-top: 0;
+  padding: 1rem;
+  list-style: none;
+
+  margin-bottom: 0;
+  font-family: oswald;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 640px) {
+  .navigatie ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navigatie a {
+    padding: 1em;
+  }
+
+  .sevilla h2 {
+    font-size: 6rem;
+  }
+}
+
+.navigatie a {
+  color: white;
+  text-decoration: none;
+  width: 130px;
+
+  font-family: Roboto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navigatie a:hover {
+  background-color: white;
+  color: black;
+}
+/*Bestemmingen*/
+#barca {
+  background: url(/images/barca.jpg) no-repeat center;
+  background-size: cover;
+}
+#bangkok {
+  background: url(/images/bangkok.jpeg) no-repeat center;
+}
+#newyork {
+  background: url(/images/newyork.jpeg) no-repeat center;
+  background-size: cover;
+}
+#tokyo {
+  background: url(/images/tokyo.webp) no-repeat center;
+  background-size: cover;
+}
+#rio {
+  background: url(/images/riode.avif) no-repeat center;
+  background-size: cover;
+}
+
+.bestemming {
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  display: block;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: opacity 1s, width 1s;
+}
+
+.bestemming h2 {
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bestemming:hover {
+  opacity: 0.7;
+}
+
+/* .sevilla {
+  background: url(/images/barca.jpg) no-repeat center;
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  display: block;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: opacity 1s, width 1s;
+}
+
+.sevilla:hover {
+  opacity: 0.7;
+}
+
+.casablanca:hover {
+  opacity: 0.7;
+}
+
+.newyork:hover {
+  opacity: 0.7;
+}
+
+.tokyo:hover {
+  opacity: 0.7;
+}
+
+.rio:hover {
+  opacity: 0.7;
+}
+
+.sevilla h2 {
+  font-family: sevillana;
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+}
+
+.casablanca {
+  background: url(/images/bangkok.jpeg) no-repeat center;
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  display: block;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity 1s, width 1s;
+}
+
+.casablanca h2 {
+  font-family: dancing;
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+  max-width: 100%;
+  height: auto;
+  overflow-wrap: break-word;
+}
+
+.newyork {
+  background: url(/images/newyork.jpeg) no-repeat center;
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  display: block;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: opacity 1s, width 1s;
+}
+
+.newyork h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+}
+
+.tokyo {
+  background: url(/images/tokyo.webp) no-repeat center;
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  transition: opacity 1s, width 1s;
+}
+
+.tokyo h2 {
+  font-family: source code pro;
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+}
+
+.rio {
+  background: url(/images/riode.avif) no-repeat center;
+  background-size: cover;
+  padding-top: 8rem;
+  margin-top: 0;
+  padding-bottom: 3rem;
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  transition: opacity 1s, width 1s;
+}
+
+.rio h2 {
+  font-family: caveat;
+  display: block;
+  font-size: 4rem;
+  padding: 0 3rem 5rem 3rem;
+}
+
+a {
+  text-decoration: none;
+} */
+
+/*contactionfo en terug naar boven*/
+
+.contactinfo {
+  background-color: black;
+  display: block;
+  padding: 1em 0 1em 0;
+  color: white;
+}
+
+.contactinfo a {
+  color: white;
+}
+
+button {
+  background-color: white;
+  width: 90px;
+  border: 1px solid black;
+}
