@@ -51,14 +51,24 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <a href="barcelona.html" id="barca" class="bestemming">
-        <h2>Barcelona</h2></a
-      >
-      <a href="#" id="bangkok" class="bestemming"> <h2>Bangkok</h2></a>
-      <a href="#" id="newyork" class="bestemming"> <h2>New York</h2></a>
-      <a href="#" id="tokyo" class="bestemming"> <h2>Tokyo</h2></a>
-      <a href="#" id="rio" class="bestemming"> <h2>Rio de Janeiro</h2></a>
+    <main id="nieuwsbriefmain">
+      <form id="formnieuwsbrief">
+        <p>Voornaam: <input type="text" width="34" id="voorn" /></p>
+        <p>Achternaam: <input type="text" width="34" id="achtern" /></p>
+        <p>Leeftijd: <input type="number" maxlength="3" id="leeftijd" /></p>
+        <p>Uw favoriete vakantiebestemmingen:</p>
+        <textarea id="textarea"></textarea>
+        <p>E-mailadres: <input type="email" id="email" /></p>
+        <p>
+          Ik wens mij aan te melden voor de nieuwsbrief:
+          <input type="checkbox" id="checkbox" />
+        </p>
+        <hr />
+        <p>
+          <button type="button" id="verzendbutton">Verzenden</button>
+        </p>
+        <p id="feedback"></p>
+      </form>
     </main>
     <footer>
       <div class="contactinfo">

@@ -5,20 +5,37 @@ img {
   height: auto;
 }
 
-.header {
+#aanmelden {
+  width: 20%;
+  height: 3em;
+  border-radius: 1em;
+  font-family: roboto;
+  background-color: white;
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
   color: white;
   background-color: black;
   height: fit-content;
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .header h1 {
   margin-top: 0;
   text-align: center;
 }
-.header p {
+.header button {
   text-align: center;
   margin-bottom: 0px;
   padding-bottom: 1em;
@@ -67,8 +84,12 @@ body {
     padding: 1em;
   }
 
-  .sevilla h2 {
+  .bestemming h2 {
     font-size: 6rem;
+  }
+
+  #formnieuwsbrief {
+    max-width: 40%;
   }
 }
 
@@ -125,129 +146,12 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .bestemming:hover {
   opacity: 0.7;
 }
-
-/* .sevilla {
-  background: url(/images/barca.jpg) no-repeat center;
-  background-size: cover;
-  padding-top: 8rem;
-  margin-top: 0;
-  display: block;
-  padding-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  transition: opacity 1s, width 1s;
-}
-
-.sevilla:hover {
-  opacity: 0.7;
-}
-
-.casablanca:hover {
-  opacity: 0.7;
-}
-
-.newyork:hover {
-  opacity: 0.7;
-}
-
-.tokyo:hover {
-  opacity: 0.7;
-}
-
-.rio:hover {
-  opacity: 0.7;
-}
-
-.sevilla h2 {
-  font-family: sevillana;
-  display: block;
-  font-size: 4rem;
-  padding: 0 3rem 5rem 3rem;
-}
-
-.casablanca {
-  background: url(/images/bangkok.jpeg) no-repeat center;
-  background-size: cover;
-  padding-top: 8rem;
-  margin-top: 0;
-  display: block;
-  padding-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
-  transition: opacity 1s, width 1s;
-}
-
-.casablanca h2 {
-  font-family: dancing;
-  display: block;
-  font-size: 4rem;
-  padding: 0 3rem 5rem 3rem;
-  max-width: 100%;
-  height: auto;
-  overflow-wrap: break-word;
-}
-
-.newyork {
-  background: url(/images/newyork.jpeg) no-repeat center;
-  background-size: cover;
-  padding-top: 8rem;
-  margin-top: 0;
-  display: block;
-  padding-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
-  transition: opacity 1s, width 1s;
-}
-
-.newyork h2 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  display: block;
-  font-size: 4rem;
-  padding: 0 3rem 5rem 3rem;
-}
-
-.tokyo {
-  background: url(/images/tokyo.webp) no-repeat center;
-  background-size: cover;
-  padding-top: 8rem;
-  margin-top: 0;
-  padding-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
-  display: block;
-  transition: opacity 1s, width 1s;
-}
-
-.tokyo h2 {
-  font-family: source code pro;
-  display: block;
-  font-size: 4rem;
-  padding: 0 3rem 5rem 3rem;
-}
-
-.rio {
-  background: url(/images/riode.avif) no-repeat center;
-  background-size: cover;
-  padding-top: 8rem;
-  margin-top: 0;
-  padding-bottom: 3rem;
-  color: rgba(255, 255, 255, 1);
-  display: block;
-  transition: opacity 1s, width 1s;
-}
-
-.rio h2 {
-  font-family: caveat;
-  display: block;
-  font-size: 4rem;
-  padding: 0 3rem 5rem 3rem;
-}
-
-a {
-  text-decoration: none;
-} */
 
 /*contactionfo en terug naar boven*/
 
@@ -266,4 +170,108 @@ button {
   background-color: white;
   width: 90px;
   border: 1px solid black;
+}
+
+/* Nieuwsbriefpagina */
+
+#nieuwsbriefmain {
+  background-color: black;
+  font-family: Roboto;
+  padding: 5%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#formnieuwsbrief {
+  background-color: rgb(78, 7, 144);
+  width: 70%;
+  padding: 2%;
+  border-radius: 15px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+#formnieuwsbrief input {
+  height: 1.5em;
+}
+
+#verzendbutton {
+  border-radius: 10px;
+  height: 2em;
+  font-size: 0.8em;
+  justify-self: center;
+}
+
+#textarea {
+  height: 5em;
+}
+
+.formValid {
+  color: greenyellow;
+}
+
+.formNotValid {
+  color: red;
+}
+
+.linkstijl {
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  margin: 1em;
+  width: 18em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Bestemmingpaginas */
+
+#bestemmingMain {
+  background-color: black;
+  padding-bottom: 1%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#bestemmingMain button {
+  border-radius: 15px;
+  width: fit-content;
+  height: 2em;
+  margin-left: 4em;
+}
+
+.numberinput {
+  max-width: 2em;
+}
+
+#prijsdiv {
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  height: 4em;
+  width: 15em;
+
+  #prijs {
+    font-size: 3em;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  #bestemmingMain {
+    flex-direction: row;
+  }
+
+  #prijssection {
+    width: 50%;
+  }
+  #berekensection {
+    width: 50%;
+  }
 }

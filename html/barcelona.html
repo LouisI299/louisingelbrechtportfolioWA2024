@@ -51,14 +51,30 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <a href="barcelona.html" id="barca" class="bestemming">
-        <h2>Barcelona</h2></a
-      >
-      <a href="#" id="bangkok" class="bestemming"> <h2>Bangkok</h2></a>
-      <a href="#" id="newyork" class="bestemming"> <h2>New York</h2></a>
-      <a href="#" id="tokyo" class="bestemming"> <h2>Tokyo</h2></a>
-      <a href="#" id="rio" class="bestemming"> <h2>Rio de Janeiro</h2></a>
+    <a href="barcelona.html" id="barca" class="bestemming">
+      <h2>Barcelona</h2></a
+    >
+    <main id="bestemmingMain">
+      <section id="berekensection">
+        <h2>Bereken nu de prijs van uw all inclusive verblijf:</h2>
+        <p>
+          Met hoeveel personen wenst u te gaan?
+          <input type="number" class="numberinput" id="personen" />
+        </p>
+        <p>
+          Hoeveel dagen wilt u hier verblijven?
+          <input type="number" class="numberinput" id="dagen" />
+        </p>
+        <button type="button" id="prijsbutton">
+          Bereken nu uw vrijblijvende prijs
+        </button>
+      </section>
+      <section id="prijssection">
+        <h2>Uw totale prijs:</h2>
+        <div id="prijsdiv">
+          <p id="prijs">€</p>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="contactinfo">
