@@ -184,10 +184,12 @@ button {
   justify-content: center;
   align-items: center;
   color: white;
+  background: url(/images/beach.avif) no-repeat center;
+  background-size: cover;
 }
 
 #formnieuwsbrief {
-  background-color: rgb(78, 7, 144);
+  background-color: rgba(78, 7, 144, 0.572);
   width: 70%;
   padding: 2%;
   border-radius: 15px;
@@ -200,7 +202,7 @@ button {
   height: 1.5em;
 }
 
-#verzendbutton {
+#sendbutton {
   border-radius: 10px;
   height: 2em;
   font-size: 0.8em;

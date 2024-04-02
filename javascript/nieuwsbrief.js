@@ -1,10 +1,8 @@
-"use strict";
-
 console.log("Script loaded");
 
 //Formuliervalidatie
 
-let verzendbutton = document.getElementById("verzendbutton");
+let sendbutton = document.getElementById("sendbutton");
 let voornaam = document.getElementById("voorn");
 let achternaam = document.getElementById("achtern");
 let leeftijd = document.getElementById("leeftijd");
@@ -51,36 +49,15 @@ let checkFormulier = () => {
   } else {
     feedback.classList.add("formNotValid");
   }
-  return valid;
 };
 
-// let link = document.createElement("a");
-// link.textContent = "Ik wil nu mijn droomreis boeken!";
-// link.classList.add("linkstijl");
-
-verzendbutton.addEventListener("click", function () {
-  p.textContent = "";
-  feedback.textContent = "";
-  let resultaat = checkFormulier();
-  //   if (resultaat == 3) {
-  //     formMain.appendChild(link);
-  //   }
-});
-
+sendbutton.addEventListener(
+  "click",
+  function () {
+    p.textContent = "";
+    feedback.textContent = "";
+    checkFormulier();
+  },
+  false
+);
 //Prijs vakantie berekenen
-let personen = document.getElementById("personen");
-let dagen = document.getElementById("dagen");
-let prijsbutton = document.getElementById("prijsbutton");
-let berekendePrijs = document.getElementById("prijs");
-const barcaPrijs = 80;
-
-let berekenPrijs = (bestemming, personen, dagen) => {
-  let prijs = bestemming * personen.value * dagen.value;
-  return prijs;
-};
-
-console.log(berekendePrijs);
-
-prijsbutton.addEventListener("click", function () {
-  berekendePrijs.textContent = "ll";
-});
