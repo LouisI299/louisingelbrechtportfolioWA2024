@@ -12,6 +12,7 @@ let feedback = document.getElementById("feedback");
 let formulier = document.getElementById("formnieuwsbrief");
 let formMain = document.getElementById("nieuwsbriefmain");
 let p = document.createElement("p");
+let aanmeldButton = document.getElementById("aanmelden");
 
 let checkFormulier = () => {
   let valid = 0;
@@ -46,6 +47,9 @@ let checkFormulier = () => {
     feedback.classList.remove("formNotValid");
     feedback.classList.add("formValid");
     p.classList.add("formValid");
+
+    localStorage.setItem("voorNaam", voornaam.value);
+    localStorage.setItem("achterNaam", achternaam.value);
   } else {
     feedback.classList.add("formNotValid");
   }
@@ -56,8 +60,27 @@ sendbutton.addEventListener(
   function () {
     p.textContent = "";
     feedback.textContent = "";
+    localStorage.setItem("voorNaam", "");
+    localStorage.setItem("achterNaam", "");
     checkFormulier();
   },
   false
 );
-//Prijs vakantie berekenen
+//localstorage
+
+if (
+  localStorage.getItem("voorNaam") != "" ||
+  localStorage.getItem("achterNaam") != ""
+) {
+  aanmeldButton.textContent =
+    "Welkom, " +
+    localStorage.getItem("voorNaam") +
+    " " +
+    localStorage.getItem("achterNaam");
+  aanmeldButton.classList.add("ingelogd");
+  aanmeldButton.style.animation = "none";
+} else {
+  aanmeldButton.textContent = "Meld je aan voor onze nieuwsbrief";
+  aanmeldButton.style.animation = "groterkleiner 1s ease-in-out backwards";
+  aanmeldButton.style.animationIterationCount = "5";
+}

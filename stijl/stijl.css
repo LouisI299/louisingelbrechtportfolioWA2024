@@ -5,6 +5,15 @@ img {
   height: auto;
 }
 
+#paginaTitle {
+  transition: 1s;
+}
+
+#paginaTitle:hover {
+  color: rgb(42, 85, 215);
+  font-size: large;
+}
+
 #aanmelden {
   width: 20%;
   height: 3em;
@@ -16,6 +25,25 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: groterkleiner 1s ease-in-out backwards;
+  animation-iteration-count: 5;
+}
+
+#aanmelden:hover {
+  animation-iteration-count: 0;
+  opacity: 0.8;
+}
+
+@keyframes groterkleiner {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 header {
@@ -99,32 +127,43 @@ body {
   width: 130px;
 
   font-family: Roboto;
-  transition: background-color 0.3s, color 0.3s;
+  transition: 0.3s;
 }
 
 .navigatie a:hover {
-  background-color: white;
   color: black;
+  background-color: white;
 }
+
 /*Bestemmingen*/
 #barca {
   background: url(/images/barca.jpg) no-repeat center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 #bangkok {
   background: url(/images/bangkok.jpeg) no-repeat center;
+  display: flex;
+  flex-direction: column;
 }
 #newyork {
   background: url(/images/newyork.jpeg) no-repeat center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 #tokyo {
   background: url(/images/tokyo.webp) no-repeat center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 #rio {
   background: url(/images/riode.avif) no-repeat center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .bestemming {
@@ -135,7 +174,7 @@ body {
   padding-bottom: 3rem;
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  transition: opacity 1s, width 1s;
+  transition: 1s;
 }
 
 .bestemming h2 {
@@ -151,6 +190,7 @@ a {
 
 .bestemming:hover {
   opacity: 0.7;
+  animation-name: zoomImage;
 }
 
 /*contactionfo en terug naar boven*/
@@ -160,16 +200,20 @@ a {
   display: block;
   padding: 1em 0 1em 0;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contactinfo a {
+.contactinfo p {
   color: white;
 }
 
-button {
+.contactinfo button {
   background-color: white;
   width: 90px;
   border: 1px solid black;
+  border-radius: 15px;
 }
 
 /* Nieuwsbriefpagina */
@@ -276,4 +320,38 @@ button {
   #berekensection {
     width: 50%;
   }
+  #weatherOutput {
+    max-width: 25%;
+  }
+}
+
+/*Weather classes*/
+
+#weatherOutput {
+  background-color: rgba(255, 255, 255, 0.777);
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: 20px;
+  width: 50%;
+  font-size: 1.4em;
+  height: 4em;
+  align-self: flex-end;
+}
+
+/*aanmeldknop wanneer je ingelogd bent*/
+.ingelogd {
+  width: 20%;
+  height: 3em;
+  border-radius: 1em;
+  font-family: roboto;
+  background-color: green;
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
