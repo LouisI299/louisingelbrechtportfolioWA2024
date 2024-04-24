@@ -1,3 +1,57 @@
+//Bepaalbestemming
+
+let linkBarca = document.getElementsByClassName("barcaLink");
+let linkBangkok = document.getElementsByClassName("bangkokLink");
+let linkNewYork = document.getElementsByClassName("newYorkLink");
+let linkTokyo = document.getElementsByClassName("tokyoLink");
+let linkRio = document.getElementsByClassName("rioLink");
+let linkHome = document.getElementById("paginaTitel");
+
+linkBarca[0].addEventListener("click", function () {
+  localStorage.setItem("bestemming", "Barcelona");
+});
+
+linkBangkok[0].addEventListener("click", function () {
+  localStorage.setItem("bestemming", "Bangkok");
+});
+
+linkNewYork[0].addEventListener("click", function () {
+  localStorage.setItem("bestemming", "New York");
+});
+
+linkTokyo[0].addEventListener("click", function () {
+  localStorage.setItem("bestemming", "Tokyo");
+});
+
+linkRio[0].addEventListener("click", function () {
+  localStorage.setItem("bestemming", "Rio de Janeiro");
+});
+
+console.log(localStorage.getItem("bestemming"));
+
+if (localStorage.getItem("bestemming") == "Barcelona") {
+  document.getElementById("bestemmingNaam").textContent = "Barcelona";
+  let bestemming = document.getElementsByClassName("bestemming");
+  bestemming[0].id = "barca";
+} else if (localStorage.getItem("bestemming") == "Bangkok") {
+  document.getElementById("bestemmingNaam").textContent = "Bangkok";
+  let bestemming = document.getElementsByClassName("bestemming");
+  bestemming[0].id = "bangkok";
+} else if (localStorage.getItem("bestemming") == "New York") {
+  document.getElementById("bestemmingNaam").textContent = "New York";
+  let bestemming = document.getElementsByClassName("bestemming");
+  bestemming[0].id = "newyork";
+} else if (localStorage.getItem("bestemming") == "Tokyo") {
+  document.getElementById("bestemmingNaam").textContent = "Tokyo";
+  let bestemming = document.getElementsByClassName("bestemming");
+  bestemming[0].id = "tokyo";
+} else if (localStorage.getItem("bestemming") == "Rio de Janeiro") {
+  document.getElementById("bestemmingNaam").textContent = "Rio de Janeiro";
+  let bestemming = document.getElementsByClassName("bestemming");
+  bestemming[0].id = "rio";
+}
+
+//Callback script laden
 (function () {
   console.log("Script loaded!");
 })();
@@ -22,9 +76,7 @@ let dagen = document.getElementById("dagen");
 let personen = document.getElementById("personen");
 let berekendePrijs = document.getElementById("prijs");
 let prijsButton = document.getElementById("prijsbutton");
-let bestemmingNaam = document.getElementById("bestemmingNaam");
-let bestemmingName = bestemmingNaam.textContent;
-
+let bestemmingName = localStorage.getItem("bestemming");
 let bestemmingen = [
   "Barcelona",
   "Bangkok",
@@ -34,7 +86,6 @@ let bestemmingen = [
 ];
 
 let [europa, ...buitenEuropa] = bestemmingen;
-console.log(buitenEuropa);
 let index = 0;
 
 for (let dest of bestemmingen) {
@@ -45,11 +96,17 @@ for (let dest of bestemmingen) {
   }
 }
 
+//Prijs berekenen
 prijsButton.addEventListener("click", function () {
   berekendePrijs.textContent = "€";
   let totalePrijs = berekenPrijs(prijzen[index], personen, dagen);
+  console.log(totalePrijs);
   if (buitenEuropa.includes(bestemmingen[index])) {
     totalePrijs += 60;
+    let p = document.createElement("p");
+    p.textContent =
+      "Voor bestemmingen buiten Europa wordt een visatoeslag van €60 gerekend.";
+    document.getElementById("prijssection").appendChild(p);
   }
 
   berekendePrijs.textContent += totalePrijs;
@@ -64,12 +121,14 @@ let weatherUrl = [
   "https://api.open-meteo.com/v1/forecast?latitude=-22.9064&longitude=-43.1822&current=temperature_2m,weather_code&forecast_days=1",
 ];
 
+let temperatuurOutput = document.getElementById("currentTemperature");
+
 async function fetchData(url) {
-  let response = await fetch(url);
-  if (response.status == 200) {
+  try {
+    let response = await fetch(url);
     return await response.json();
-  } else {
-    alert("HTTP Error: " + response.status);
+  } catch (error) {
+    temperatuurOutput.textContent = "We konden de temperatuur niet ophalen.";
   }
 }
 
@@ -100,18 +159,13 @@ fetchData(weatherUrl[index]).then((data) => {
       break;
   }
 
-  let temperatuurOutput = document.getElementById("currentTemperature");
   temperatuurOutput.textContent += " " + data.current.temperature_2m + "°C";
 });
 
-//localstorage
-
+//Aanmeldknop
 let aanmeldButton = document.getElementById("aanmelden");
-
-if (
-  localStorage.getItem("voorNaam") != "" ||
-  localStorage.getItem("achterNaam") != ""
-) {
+console.log(localStorage.getItem("aangemeld"));
+if (localStorage.getItem("aangemeld") == "true") {
   aanmeldButton.textContent =
     "Welkom, " +
     localStorage.getItem("voorNaam") +
