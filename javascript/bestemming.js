@@ -99,14 +99,22 @@ for (let dest of bestemmingen) {
 //Prijs berekenen
 prijsButton.addEventListener("click", function () {
   berekendePrijs.textContent = "€";
+  if (personen.value < 1 || dagen.value < 1) {
+    berekendePrijs.textContent = "Ongeldig.";
+    return;
+  }
   let totalePrijs = berekenPrijs(prijzen[index], personen, dagen);
   console.log(totalePrijs);
   if (buitenEuropa.includes(bestemmingen[index])) {
     totalePrijs += 60;
-    let p = document.createElement("p");
-    p.textContent =
-      "Voor bestemmingen buiten Europa wordt een visatoeslag van €60 gerekend.";
-    document.getElementById("prijssection").appendChild(p);
+    let prijssection = document.getElementById("prijssection");
+    if (!prijssection.querySelector("#visatoeslag")) {
+      let p = document.createElement("p");
+      p.id = "visatoeslag";
+      p.textContent =
+        "Voor bestemmingen buiten Europa wordt een visatoeslag van €60 gerekend.";
+      prijssection.appendChild(p);
+    }
   }
 
   berekendePrijs.textContent += totalePrijs;

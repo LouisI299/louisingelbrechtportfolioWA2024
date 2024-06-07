@@ -355,3 +355,9 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+/* Footer */
+
+footer button {
+  cursor: pointer;
+}
